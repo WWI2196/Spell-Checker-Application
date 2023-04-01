@@ -19,7 +19,14 @@ public class SpellChecker {
         }
         current.setEnd(true);
     }
-
+    public boolean checkWord(String word) {
+        for(String lowerCaseWord : Runner.words){
+            if(lowerCaseWord.equalsIgnoreCase(word)){
+                return true;
+            }
+        }
+        return false;
+    }
     public String[] checkWords(String word){
         String[] result = new String[1];
         int index = 0;
@@ -33,54 +40,54 @@ public class SpellChecker {
         }
 
         for(int i = 0; i < word.length(); i++){
-            // delete
             if (i < word.length() - 1) {
                 String newWord = deleteLetterAt(word, i);
-                if (searchWord(newWord) && !contains(result, index, newWord)) {
+                if (searchWord(newWord) && contains(result, index, newWord)) {
                     result = resize(result, index + 1);
                     result[index] = newWord;
                     index++;
 
                 }
             }
-            // replace
             for (char character = 'a'; character <= 'z'; character++) {
                 String newWord = replaceLetterAt(word, i, character);
-                if (searchWord(newWord) && !contains(result,index,newWord)){
+                if (searchWord(newWord) && contains(result, index, newWord)){
                     result = resize(result, index + 1);
                     result[index] = newWord;
                     index++;
                 }
             }
-            // insert
             for (char character = 'a'; character <= 'z'; character++) {
                 String newWord = insertLetterAt(word, i, character);
-                if (searchWord(newWord) && !contains(result,index,newWord)){
+                if (searchWord(newWord) && contains(result, index, newWord)){
                     result = resize(result, index + 1);
                     result[index] = newWord;
                     index++;
                 }
             }
-            // swap
             if (i < word.length() - 1) {
                 String newWord = swapLetterAt(word, i);
-                if (searchWord(newWord) && !contains(result,index,newWord)){
+                if (searchWord(newWord) && contains(result, index, newWord)){
                     result = resize(result, index + 1);
                     result[index] = newWord;
                     index++;
                 }
             }
         }
-        return resize(result, index);
+        if (index == 0){
+            return new String[0];
+        }else {
+            return resize(result, index);
+        }
     }
 
     private boolean contains(String[] result, int index, String newWord) {
         for (int i = 0; i < index; i++) {
             if (result[i].equals(newWord)) {
-                return true;
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
     public boolean searchWord(String word){
@@ -96,9 +103,7 @@ public class SpellChecker {
     }
     private String[] resize(String[] array, int size) {
         String[] newArray = new String[size];
-        for (int i = 0; i < Math.min(array.length,size); i++) {
-            newArray[i] = array[i];
-        }
+        System.arraycopy(array, 0, newArray, 0, Math.min(array.length, size));
         return newArray;
     }
     private String deleteLetterAt(String word, int index) {
@@ -111,6 +116,10 @@ public class SpellChecker {
         return word.substring(0, index) + character + word.substring(index);
     }
     private String swapLetterAt(String word, int index) {
-        return word.substring(0, index) + word.charAt(index + 1) + word.charAt(index) + word.substring(index + 2);
+        if (index < word.length() - 1) {
+            return word.substring(0, index) + word.charAt(index + 1) + word.charAt(index) + word.substring(index + 2);
+        }else {
+            return word;
+        }
     }
 }

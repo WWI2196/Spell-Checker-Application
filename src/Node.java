@@ -27,6 +27,9 @@ public class Node{
     }
 
     public boolean hasChild(char c){
+        if (c < 'a' || c > 'z') {
+            throw new IllegalArgumentException("Invalid character"+ c);
+        }
         return children[c - 'a'] != null;
     }
 
