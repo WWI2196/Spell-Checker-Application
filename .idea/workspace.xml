@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab270ed4-75e9-4492-8ac8-27551435a62a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Dictionary.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dictionary_Academic.txt" afterDir="false" />
+    <list default="true" id="ab270ed4-75e9-4492-8ac8-27551435a62a" name="Changes" comment="Final project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Runner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SpellChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SpellChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dictionary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dictionary.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +71,16 @@
       <workItem from="1680347701897" duration="65000" />
       <workItem from="1680347972750" duration="67000" />
       <workItem from="1680348438151" duration="4117000" />
+      <workItem from="1680352694210" duration="508000" />
     </task>
+    <task id="LOCAL-00001" summary="Final project">
+      <created>1680353099570</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680353099570</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,5 +99,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Final project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final project" />
   </component>
 </project>
