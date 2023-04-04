@@ -6,25 +6,29 @@ import java.util.Scanner;
 public class Runner {
     public static String[] words;
     public static void main(String[] args) {
-        words = readFromFile();
-        SpellChecker newCheck = new SpellChecker(words);
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a word to check: ");
-        String word = scanner.nextLine().toLowerCase();
+        do {
+            words = readFromFile();
+            SpellChecker newCheck = new SpellChecker(words);
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Enter a word to check: ");
+            String word = scanner.nextLine().toLowerCase();
 
-        if (newCheck.checkWord(word)) {
-            System.out.println(word + " is correct.");
-        }  else {
-            String[] results = newCheck.checkWords(word);
-            if (results.length == 0) {
-                System.out.println("No suggestions for " + word + ".");
-            } else {
-                System.out.println("Suggestions for " + word + ": ");
-                for (String result : results) {
-                    System.out.println(result);
+            if (newCheck.checkWord(word)) {
+                System.out.println(word + " is correct.");
+                System.out.println();
+            }  else {
+                String[] results = newCheck.checkWords(word);
+                if (results.length == 0) {
+                    System.out.println("No suggestions for " + word + ".");
+                } else {
+                    System.out.println("Suggestions for " + word + ": ");
+                    for (String result : results) {
+                        System.out.println(result);
+                    }
                 }
+                System.out.println();
             }
-        }
+        } while (true);
     }
     private static String[] readFromFile() {
         String[] words = new String[0];
