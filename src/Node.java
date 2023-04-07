@@ -22,18 +22,18 @@ public class Node{
         isEnd = end;
     }
 
-    public Node getChild(char c){
-        return children[c - 'a'];
+    public Node getChild(char character){
+        return children[character - 'a'];
     }
 
-    public boolean hasChild(char c){
-        if (c < 'a' || c > 'z') {
-            throw new IllegalArgumentException("Invalid character"+ c);
+    public boolean hasChild(char character){
+        if (character < 'a' || character > 'z') {
+            throw new IllegalArgumentException("Invalid character"+ character);
         }
-        return children[c - 'a'] != null;
+        return children[character - 'a'] != null;
     }
 
-     public void addChild(char c, Node node) {
-         children[c - 'a'] = node;
+     public void addChild(char character, Node node) {
+         children[character - 'a'] = node;
      }
 }

@@ -1,5 +1,5 @@
 public class SpellChecker {
-    Node root;
+    private final Node root;
 
     public SpellChecker(String[] words){
         root = new Node();
