@@ -1,4 +1,4 @@
-# Part B - Spell-Checker Application
+# Spell-Checker Application
 
 ## Overview
 This part of the assessment involves the implementation of a spell-checker application. The application stores a lexicon of words in a set and implements a method `spellChecker(a)` to perform spell checks on strings against the set of words.
